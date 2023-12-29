@@ -1,0 +1,264 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary: #0163E8;
+  --white: #fff;
+  --black: #000000;
+  --grey: #808080;
+  --antiflashwhite: #F1F1F1;
+  --liner: #FFF1E4;
+  --xanadu: #7EB4AA;
+  --antiquewhite: antiquewhite;
+}
+
+body{
+  width: 100%;
+  height: 0 auto;
+  overflow-x: hidden;
+}
+
+/** Welcome Toast **/
+.welcome{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 15px;
+  top: 50px;
+  gap: 20px;
+  width: 290px;
+  height: 55px;
+  background: var(--antiquewhite);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 2;
+  opacity: 0;
+  animation: Anim 1.5s ease 0s alternate forwards, fade-wel 12s ease forwards;
+}
+.welcome::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  background: var(--primary);
+  animation: bar 3s linear 1s forwards;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+::selection{
+  background: #000;
+}
+
+/** Topbar **/
+.topbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  background: var(--antiflashwhite);
+  border-bottom: 1px solid var(--grey);
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+.topbar .left{
+  margin-left: 10px;
+  letter-spacing: 1.5px;
+  font-size: 25px;
+  font-family: arial;
+  font-weight: 550;
+}
+.topbar .left span{
+  color: var(--xanadu);
+}
+.topbar .right{
+  margin-right: 5px;
+}
+.topbar .right img{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/** Search Modal **/
+.search-modal{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 0 auto;
+}
+.search-modal input[type="text"]{
+  width: 80%;
+  height: 40px;
+  outline: none;
+  text-indent: 10px;
+  font-size: 15px;
+  letter-spacing: 1.1px;
+  font-weight: 500;
+  margin: 10px 0px 10px 0px;
+}
+.search-modal p{
+  font-size: 50px;
+  margin-left: 20px;
+}
+
+/** Menu Batr **/
+.menu-bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  height: 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.menu-bar::-webkit-scrollbar{
+  width: 0;
+}
+.menu-bar .menu-area{
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  scroll-behavior: smooth;
+}
+.menu-area button{
+  width: 100px;
+  height: 34px;
+  margin: 10px;
+  border: 2px solid var(--primary);
+  background: #F6F6FE;
+  outline: none;
+  color: var(--black);
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.menu-area button:hover{
+  background: var(--primary);
+  color: var(--white);
+}
+.menu-bar-b{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: left;
+  margin-top: 15px;
+  height: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-left: 7px;
+}
+.menu-bar-b::-webkit-scrollbar{
+  width: 0;
+}
+.menu-bar-b a img{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+/** Fixed Button **/
+.f-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background: var(--antiflashwhite);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.f-button img{
+  width: 30px;
+  height: 30px;
+}
+.f-button span{
+  position: fixed;
+  z-index: 2;
+  bottom: 50px;
+  right: 30px;
+  color: var(--xanadu);
+  font-size: 12px;
+}
+
+/** Cart Modal **/
+.cart-modal{
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+}
+
+/** Footer **/
+footer{
+  width: 100%;
+  height: 0 auto;
+}
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 0 auto;
+}
+.content .cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background: var(--antiflashwhite);
+  color: var(--grey);
+  letter-spacing: 1.3px;
+  font-size: 17px;
+  font-weight: 500;
+}
+.content .cont span{
+  color: var(--primary);
+}
+
+/** Keyframes **/
+/** (Search Modal) **/
+@keyframes Anim{
+  0%{
+    transform: translateX(100px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+@keyframes fade-wel{
+  0%,
+  30%,
+  50%,
+  75%,
+  85%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@keyframes bar{
+  100%{
+    width: 0;
+  }
+}
